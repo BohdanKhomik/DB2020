@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+
+{%block content %}
+  {% if table_name %}
+  <h3>Now using table with name: {{table_name}} </h3>
+  {% endif %}
+  <form  class = "grid" action="/result" method="POST">
+    <label for="Name">Enter ID of the team than you want to check :</label><br>
+    <input type="text" id="id" name="id"><br>
+    <input type="submit" class="file_submit">
+  </form>
+    {% if name %}
+    <h3>{{name}} </h3><br>
+    <a href="http://127.0.0.1:5000/update">Update team</a>
+    <a href="http://127.0.0.1:5000/delete">Delete team</a>
+    {% endif %} 
+
+    <a href="http://127.0.0.1:5000/create">Create team</a>
+
+{% endblock %}

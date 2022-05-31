@@ -1,0 +1,24 @@
+{%extends 'base.html' %}
+
+{%block content %}
+    {% if table %}
+    <h3>Now using table with name: {{table}} </h3>
+    {% endif %}
+    <form class="grid" action="/update" method="POST">
+        <label for="Upd_team_name">Enter a new team_name:</label><br>
+        <input type="text" id="upd_team_name" name="upd_team_name"><br>
+
+        <label for="Upd_team_region">Enter a new team_region :</label><br>
+        <input type="text" id="upd_team_region" name="upd_team_region"><br>
+
+        <label for="Upd_logotipe">Enter a new team_logotipe :</label><br>
+        <input type="text" id="upd_logotipe" name="upd_logotipe"><br>
+        <input type="submit" class="file_submit">
+    </form>
+
+    {% if name1 %}
+    <h3>{{name1 }}</h3>
+    <a href="http://127.0.0.1:5000/">Choose another ID</a>
+    {% endif %}
+
+{% endblock %}
