@@ -1,0 +1,85 @@
+{%extends 'base.html' %}
+
+{%block content %}
+    {% if table_name %}
+    <h3>Now we working with the table: {{table_name}} </h3>
+    {% endif %}
+    <form class="grid" action="/create" method="POST">
+        {% if table_name == "teams" %}
+        <label for="ID">Enter new id :</label><br>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="Team_name">Enter new team_name:</label><br>
+        <input type="text" id="team_name" name="team_name"><br>
+
+        <label for="Team_region">Enter new team_region :</label><br>
+        <input type="text" id="team_region" name="team_region"><br>
+
+        <label for="Logotipe">Enter new team_logotipe :</label><br>
+        <input type="text" id="logotipe" name="logotipe"><br>
+        <input type="submit" class="file_submit">
+        {% endif %}
+
+        {% if table_name == "team_mates" %}
+        <label for="ID">Enter new id :</label><br>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="Role id">Enter a role id:</label><br>
+        <input type="text" id="role_id" name="role_id"><br>
+
+        <label for="Team id">Enter a team id :</label><br>
+        <input type="text" id="team_id" name="team_id"><br>
+
+        <label for="playername ">Enter a player_name :</label><br>
+        <input type="text" id="player_name" name="player_name"><br>
+        
+        <label for="world rank ">Enter a world_rank :</label><br>
+        <input type="text" id="world_rank" name="world_rank"><br>
+
+        <label for="Approx_total_winnings">Enter a prize money amount :</label><br>
+        <input type="text" id="approx_total_winnings" name="approx_total_winnings"><br>
+
+        <input type="submit" class="file_submit">
+        {% endif %}
+        
+        {% if table_name == "teamate_roles" %}
+        <label for="ID">Enter new id :</label><br>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="Role name">Enter a role name:</label><br>
+        <input type="text" id="role_name" name="role_name"><br>
+
+        <input type="submit" class="file_submit">
+        {% endif %}
+
+        {% if table_name == "games" %}
+        <label for="ID">Enter id :</label><br>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="Team1_ID">Enter team1 ID:</label><br>
+        <input type="text" id="team1_id" name="team1_id"><br>
+
+        <label for="Team2_ID">Enter team2 ID:</label><br>
+        <input type="text" id="team2_id" name="team2_id"><br>
+
+        <label for="Arena ID">Enter arena_id :</label><br>
+        <input type="text" id="arena_id" name="arena_id"><br>
+
+        <label for="Date time">Enter a data time(xxxx-xx<=12-xx<31) :</label><br>
+        <input type="text" id="date_time" name="date_time"><br>
+
+        <input type="submit" class="file_submit">
+        {% endif %}
+
+        {% if table_name == "arenas" %}
+        <label for="ID">Enter new id :</label><br>
+        <input type="text" id="id" name="id"><br>
+        <label for="Arenas">Enter new arena_name :</label><br>
+        <input type="text" id="arena_name" name="arena_name"><br>
+        <input type="submit" class="file_submit">
+        {% endif %}
+    </form>
+    <br><a href="http://127.0.0.1:5000/">Change table</a>
+
+
+{% endblock %}
