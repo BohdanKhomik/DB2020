@@ -6,8 +6,7 @@ choosed_table = ""
 def get_teams(id, table):
     global arr
     arr = id
-    conn = psycopg2.connect(dbname='d24kbhq728f76j', user="bxpvpkkpythaka", 
-                        password='c611ee94510abdaa439f4cb8e9eed39fa5144ad59f53963d8984d0009fa4ad92', host='ec2-34-246-227-219.eu-west-1.compute.amazonaws.com')
+    conn = psycopg2.connect()
     cursor = conn.cursor()
 
     cursor.execute(f"SELECT * FROM {table} WHERE id = {id};")
@@ -19,8 +18,7 @@ def get_teams(id, table):
 
 
 def change_data(fields_list, table_name):
-    conn = psycopg2.connect(dbname='d24kbhq728f76j', user="bxpvpkkpythaka", 
-                        password='c611ee94510abdaa439f4cb8e9eed39fa5144ad59f53963d8984d0009fa4ad92', host='ec2-34-246-227-219.eu-west-1.compute.amazonaws.com')
+    conn = psycopg2.connect()
     cursor = conn.cursor()
 
     if(table_name == "teams"):
@@ -44,8 +42,7 @@ def change_data(fields_list, table_name):
 
 def delete(table_name):
 
-    conn = psycopg2.connect(dbname='d24kbhq728f76j', user="bxpvpkkpythaka", 
-                        password='c611ee94510abdaa439f4cb8e9eed39fa5144ad59f53963d8984d0009fa4ad92', host='ec2-34-246-227-219.eu-west-1.compute.amazonaws.com')
+    conn = psycopg2.connect()
     cursor = conn.cursor()
 
     cursor.execute(f"DELETE FROM \"{table_name}\" WHERE id = {arr}")
@@ -55,8 +52,7 @@ def delete(table_name):
     conn.close()
   
 def add(fields_list, table_name):
-    conn = psycopg2.connect(dbname='d24kbhq728f76j', user="bxpvpkkpythaka", 
-                        password='c611ee94510abdaa439f4cb8e9eed39fa5144ad59f53963d8984d0009fa4ad92', host='ec2-34-246-227-219.eu-west-1.compute.amazonaws.com')
+    conn = psycopg2.connect()
     cursor = conn.cursor()
     
     sql = ""
